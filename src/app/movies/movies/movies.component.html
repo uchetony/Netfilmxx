@@ -1,1 +1,17 @@
-<p>movies works!</p>
+<!-- <div >
+    <p>{{movie.title}}</p>
+    <img src="http://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="">
+   
+</div> -->
+
+<div class="card mx-0" style="width: 17rem;">
+    <img src="http://image.tmdb.org/t/p/w200{{movies.poster_path}}" class="card-img-top" alt="Netfilmx Movie from Tmdb" height="350">
+    <div class="card-body">
+        <h5 class="card-title">{{movies.title}}</h5>
+        <a 
+        [routerLink]= "['/movies', movies.id]"
+        >View details</a>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+</div>
