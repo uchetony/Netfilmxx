@@ -1,0 +1,14 @@
+.navbar {
+    height: 4rem;
+}
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-item {
+    margin: .5rem;
+}
+
+.dropdown-menu {
+    left: -10%;
+}
