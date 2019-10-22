@@ -1,0 +1,100 @@
+
+#sidenav {
+    height: 100vh;
+    position: sticky;
+    background-color: #191f26;
+    padding: 1rem 0 0;
+    color: white;
+}
+ul img {
+    height: 100px;
+    width: 100px;
+    margin: 2rem 3rem 2rem;
+}
+ul h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+}
+.avatar-card {
+    display: flex;
+    margin: 0rem 0rem 2rem;
+    padding: .1rem .1rem; 
+    align-content: center;
+    background-color: rgba(68, 164, 205, .1);
+    height: 120px;
+}
+.dashboard-avatar {
+    border: 1.5px solid #44a4cd;
+    height: 80px;
+    width: 80px;
+    background-image: url('../../assets/images/user-male.png');
+    background-size: contain;
+    border-radius: 50%;
+    margin: 1rem 1rem 2rem .5rem;
+}
+.avatar-details {
+    margin-top: 2rem;
+    color: white;
+}
+.icons {
+    display: flex;
+    margin-top: 0;
+}
+.icons i {
+    margin-right: .8rem;
+}
+.shift-right{
+    margin-right: .8rem;
+}
+.shift-far-right{
+    margin-right: 8rem; 
+    margin-bottom: 1.5rem;
+}
+.pad{
+    padding-left: 1.3rem;
+    margin-bottom: 12px;
+}
+.color{
+    background-color: #191f26;
+    outline: none;
+    border:none ;
+}
+.shift-right-bit{
+    padding-left: 0.5rem;
+}
+.dropdown {
+    margin-bottom: 1rem !important;
+}
+.styl.color li {
+    padding: .2rem 0 !important;
+}
+.dropdown-menu{
+    position: relative;
+}
+.styl{
+    list-style-type: none;
+}
+.downs{
+    margin-bottom: 5px;
+}
+.statistics{
+    margin-right: 6.77rem; 
+    margin-bottom: 1.5rem; 
+}
+.comp{
+    margin-right: 5.1rem; 
+    margin-bottom: 1.5rem; 
+}
+.analytics{
+    margin-right: 6.755rem; 
+    margin-bottom: 1.5rem;
+}
+.widget{
+    margin-right: 7rem; 
+    margin-bottom: 1.5rem;
+}
+.extra{
+    margin-right: 8.2rem; 
+    margin-bottom: 1.5rem;
+}

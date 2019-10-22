@@ -14,7 +14,7 @@ export class MoviesService {
 
   // TMDB API
   // defaultApiUrl = 'https://api.themoviedb.org/3/movie/550?api_key=1a9717acdec299a8ddf1891e9bf27d47'
-  defaultApiUrl = 'https://api.themoviedb.org/3/movie/top_rated?api_key=1a9717acdec299a8ddf1891e9bf27d47&language=en-US&page=1'
+  defaultApiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=1a9717acdec299a8ddf1891e9bf27d47&language=en-US&page=1'
 
   constructor(private http: HttpClient) { }
 

@@ -1,37 +1,122 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Netfilmxx</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- search form -->
-        <form #searchForm="ngForm">
-            <div class="form-group">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  minlength="3" name="searchKeyword" ngModel>
-                <a type="submit" class="btn btn-primary" [routerLink]="['/movies/search', searchForm.value.searchKeyword]">Search</a>
-            </div>
-        </form>
-        <!-- navlinks -->
-        <ul class="navbar-nav mr-5">
+        navlinks
+        <ul class="navbar-nav mr-0">
             <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
             <a class="nav-link disabled" tabindex="-1" aria-disabled="true" href="#">|</a>
             </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dashboard
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            <li>
+                <ng-template #guestLogin>
+                    <a routerLink="/login">Login</a>
+                </ng-template>
+            </li>
+            <li class="nav-item" *ngIf="appUser">
+                <img src="../../assets/images/user-male.png" alt="" height="50" width="50">
+            </li>
+
+            <li class="nav-item dropdown" *ngIf="appUser; else guestLogin">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hi, {{appUser.name}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    for app users
+                    <ng-container *ngIf="appUser.isUser; else guestdashboard">
+                        <a class="dropdown-list">User Dashboard</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </ng-container>
+
+                    <ng-template #guestdashboard>
+                        Not a user
+                    </ng-template>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-list" (click)="logout()">Sign Out</a>
+                </div>
             </li>
         </ul>
-
     </div>
-  </nav>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <!-- navbar brand -->
+        <a class="navbar-brand ml-5" routerLink="/">Netfilmxx</a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">    
+          <!-- search box -->
+          <form class="form-inline mx-auto">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search  by title" aria-label="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+    
+          <!-- navbar links -->
+          <ul class="navbar-nav mr-5">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/">Popular Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/">Top rated Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/">Latest Movies</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link disabled" tabindex="-1" aria-disabled="true">|</a>
+            </li>
+    
+            <!-- Login or user area -->
+            <ng-template #guestLogin>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/login">Login</a>
+              </li> 
+            </ng-template>      
+            <li class="nav-item" *ngIf="appUser">
+                <img src="../../assets/images/user-male.png" alt="" height="30" width="30">
+            </li>
+            
+            <li class="nav-item dropdown" *ngIf="appUser; else guestLogin">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hi, {{appUser.name}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- for app users -->
+                    <ng-container *ngIf="appUser.isUser; else guestdashboard">
+                        <a class="dropdown-list">User Dashboard</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </ng-container>
+
+                    <ng-template #guestdashboard>
+                        Please <a routerLink="/login">Login</a>
+                    </ng-template>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-list" (click)="logout()">Sign Out</a>
+                </div>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>

@@ -4,14 +4,42 @@
    
 </div> -->
 
-<div class="card mx-0" style="width: 17rem;">
+<!-- <div class="card mx-0" style="width: 17rem;">
     <img src="http://image.tmdb.org/t/p/w200{{movies.poster_path}}" class="card-img-top" alt="Netfilmx Movie from Tmdb" height="350">
     <div class="card-body">
         <h5 class="card-title">{{movies.title}}</h5>
         <a 
         [routerLink]= "['/movies', movies.id]"
         >View details</a>
-        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div> -->
+
+
+
+<div class="card">   
+    <div class="card-header">
+        <img class="card-img" src="http://image.tmdb.org/t/p/w185_and_h278_bestv2{{movies.poster_path}}" alt="Netfilmxx Image not found">
+    </div>  
+    <div class="card-body">
+        <h4 class="card-title">{{movies.title}}</h4>
+        <div class="container">
+            <div class="row">
+            <div class="col-4 metadata">
+                <i class="fa fa-star" aria-hidden="true"></i> 
+                <p>{{movies.vote_average}}/10</p>
+            </div>
+            <div class="col-8 metadata">Adventure. Sci-Fi</div>
+            </div>
+        </div>      
+        <!-- <p class="card-text">A team of explorers travel through wormhole in space in an attempt to ensure humanity's survival.</p> -->
+        <a class="trailer-preview" href="https://youtu.be/ePbKGoIGAXY" target="new">
+            <i class="fa fa-play" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="card-footer">
+        <a [routerLink]= "['/movies', movies.id]">More details</a>
     </div>
 </div>
+

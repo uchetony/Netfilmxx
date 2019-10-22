@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap');
+
+
+html * {
+    height: 100%;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #1c2228;
+    background-color: black;
+    color: #f7fff7;
+    height: 100%;
+    margin: 5rem 0 0;
+}
+
+a {
+    color: #44a4cd;
+}
+
+a:hover {
+   color: #44a8cf;
+   text-decoration: none;
+}
+
+.shadow {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, .2);
+}
+
+.section-container {
+    padding: 2rem;
+}
+
+#navbar {
+    background-color: #161a1e !important;
+    position: fixed !important;
+    width: 100%;   
+}
+
+#dashboad-display {
+    margin: 5rem 0 0;
+}
+
+#pages {
+    height: 100vh;
+}
+#line-chart-card {
+    height: 350px;
+} */
+
+/* .sidenav-col {
+    padding: 0 !important;
+    margin: 0 !important;
+} */
+.pages-col {
+    padding: 0 !important;
+    margin-top: 70px !important;
+}
