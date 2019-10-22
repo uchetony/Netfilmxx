@@ -46,6 +46,9 @@ export class MovieCartService {
           {
             movieName: movies.title,
             movieVotes: movies.vote_average,
+            movieImage: movies.poster_path,
+            movieOverview: movies.overview,
+            movieDate: movies.release_date,
             state: 1
           }
         )

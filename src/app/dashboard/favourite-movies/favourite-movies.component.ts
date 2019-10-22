@@ -16,7 +16,7 @@ export class FavouriteMoviesComponent implements OnInit {
     this.moviesCartService.getMovieCart().valueChanges().pipe().subscribe(
       (cart: any) => {
         for (let movieId in cart.items) {
-          this.movieCartItems.push(cart.items[movieId])
+          this.movieCartItems.push(cart.items[movieId]) 
         }
       }
     )
