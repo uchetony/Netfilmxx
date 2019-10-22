@@ -2,6 +2,21 @@
 # Netfilmxx
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
+The backend of this app was built with firebase.
+The movies are gotten from a REST API https://www.themoviedb.org/ , make sure to go through heir documentation.
+You need to install firebase-tools, firebase and angularfire
+
+## Setting up firebase
+Run npm install -g firebase-tools
+Run firebase login and login with your credentials
+Run firebase init and set up firebase how you want.
+
+## interacting with firebase from the app
+Run npm install --save firebase angularfire2
+Visit console.firebase.google.com and get the config and paste as a 'firebase' object in your enviroemnent.ts and enviroemnent.prod.ts
+In app.module.ts import AngulaFireModule, AngularFireAuth and AngularFireDatabase.
+In imports array, add AngulaFireModule.initializeApp(environment.firebase)
+In providers array add AngularFireAuth and AngularFireDatabase
 
 ## Development server
 
@@ -13,7 +28,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build --prod` to build the app for production. The build artifacts will be stored in the `dist/netflimxx` directory. 
 
 ## Running unit tests
 
