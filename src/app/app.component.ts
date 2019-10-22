@@ -32,5 +32,7 @@ export class AppComponent implements OnInit {
         }
       }
     )
+
+    localStorage.setItem('isFavourite', '0')
   }
 }

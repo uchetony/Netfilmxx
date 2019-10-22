@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieCartService } from 'src/app/service/movie-cart/movie-cart.service';
 
 @Component({
   selector: 'favourite-movies',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouriteMoviesComponent implements OnInit {
 
-  constructor() { }
+  movieCartItems = []
+
+  constructor(private moviesCartService: MovieCartService) { }
 
   ngOnInit() {
+    this.moviesCartService.getMovieCart().valueChanges().pipe().subscribe(
+      (cart: any) => {
+        for (let movieId in cart.items) {
+          this.movieCartItems.push(cart.items[movieId])
+        }
+      }
+    )
   }
-
 }
